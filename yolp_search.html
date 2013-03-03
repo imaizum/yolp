@@ -1,0 +1,238 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>YOLP Search</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+  <form class="form-horizontal" id="YolpSearch">
+    <legend>YOLP Search</legend>
+
+<div class="spanr6">
+
+    <!-- keyword -->
+    <div class="control-group">
+    <label class="control-label" for="keyword">query</label>
+    <div class="controls">
+    <input type="text" class="search-query" placeholder="search" id="keyword">
+    <button type="button" class="btn btn-mini" id="keyword-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- cid -->
+    <div class="control-group">
+    <label class="control-label" for="cid">cid</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="cid">
+    <button type="button" class="btn btn-mini" id="cid-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- uid -->
+    <div class="control-group">
+    <label class="control-label" for="uid">uid</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="uid">
+    <button type="button" class="btn btn-mini" id="uid-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- gid -->
+    <div class="control-group">
+    <label class="control-label" for="gid">gid</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="gid">
+    <button type="button" class="btn btn-mini" id="gid-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- id -->
+    <div class="control-group">
+    <label class="control-label" for="id">id</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="id">
+    <button type="button" class="btn btn-mini" id="id-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- bid -->
+    <div class="control-group">
+    <label class="control-label" for="bid">bid</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="bid">
+    <button type="button" class="btn btn-mini" id="bid-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- ac -->
+    <div class="control-group">
+    <label class="control-label" for="ac">ac</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="ac">
+    <button type="button" class="btn btn-mini" id="ac-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+ 
+    <!-- gc -->
+    <div class="control-group">
+    <label class="control-label" for="gc">gc</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="gc">
+    <button type="button" class="btn btn-mini" id="gc-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- distinct -->
+    <div class="control-group">
+    <label class="control-label" for="distinct">distinct</label>
+    <div class="controls">
+    <select id="distinct">
+      <option>true</option>
+      <option>false</option>
+    </select>  
+    </div></div>
+    
+    <!-- detail -->
+    <div class="control-group">
+    <label class="control-label" for="detail">detail</label>
+    <div class="controls">
+    <select id="detail">
+      <option>full</option>
+      <option>standard</option>
+      <option>simple</option>
+    </select>  
+    </div></div>
+
+    <!-- sort -->
+    <div class="control-group">
+    <label class="control-label" for="sort">sort</label>
+    <div class="controls">
+    <select id="sort" >
+      <option>hybrid</option>
+      <option>rating</option>
+      <option>review</option>
+      <option>price</option>
+      <option>kana</option>
+      <option>score</option>
+      <option>dist</option>
+      <option>geo</option>
+    </select>  
+    </div></div>
+  
+    <!-- results -->
+    <div class="control-group">
+    <label class="control-label" for="results">results</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="10" id="results">
+    <button type="button" class="btn btn-mini" id="results-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+  </div>
+  
+  <div class="span6">
+    
+    <!-- coupon -->
+    <div class="control-group">
+    <label class="control-label" for="coupon">coupon</label>
+    <div class="controls">
+    <select id="coupon">
+      <option>true</option>
+      <option>false</option>
+    </select>  
+    </div></div>
+    
+    <!-- coupon -->
+    <div class="control-group">
+    <label class="control-label" for="coupon">coupon</label>
+    <div class="controls">
+    <select id="coupon">
+      <option>true</option>
+      <option>false</option>
+    </select>  
+    </div></div>
+ 
+  </div>
+  
+  <div class="span12">
+    <div class="form-actions">
+    <button type="submit" class="btn-primary"> 検 索 </button>
+    </div>
+  </div>
+ 
+  </form>
+  <br/> 
+  
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    $("#YolpSearch").submit(function(){
+      search();
+      return false;
+    });
+  });
+
+  function search() {
+    baseurl = "http://search.olp.yahooapis.jp/OpenLocalPlatform/V1/localSearch",
+    url = baseurl;
+    url += "?";
+    url += "query=" + $("#keyword").val(); 
+    url += "&";
+    url += "cid=" + $("#cid").val(); 
+    url += "&";
+    url += "uid=" + $("#uid").val(); 
+    url += "&";
+    url += "gid=" + $("#gid").val(); 
+    url += "&";
+    url += "id=" + $("#id").val(); 
+    url += "&";
+    url += "bid=" + $("#bid").val(); 
+    url += "&";
+    url += "ac=" + $("#ac").val(); 
+    url += "&";
+    url += "gc=" + $("#gc").val(); 
+    url += "&";
+    url += "distinct=" + $("#distinct").val(); 
+    url += "&";
+    url += "detail=" + $("#detail").val(); 
+    url += "&";
+    url += "sort=" + $("#sort").val(); 
+    url += "&";
+    url += "results=" + $("#results").val();
+    url += "&";
+    url += "group=gid";
+    url += "&";
+    url += "output=xml";
+    url += "&";
+    url += "appid="";
+     window.open(url);
+  }
+
+  function add_clear_button(button){
+    $(button).wrap('<span></span>');
+    $(button).after('<button type="button" class="btn btn-mini"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>');
+    $(button).next().bind("click",function(){
+        var s = $(this).parent();
+        s.html(s.html());
+    });
+  }
+
+  $(function(){
+    $("#keyword-clear").click(function(){ $("#keyword").val(""); });
+    $("#cid-clear").click(function(){ $("#cid").val(""); });
+    $("#uid-clear").click(function(){ $("#uid").val(""); });
+    $("#gid-clear").click(function(){ $("#gid").val(""); });
+    $("#id-clear").click(function(){ $("#id").val(""); });
+    $("#ac-clear").click(function(){ $("#ac").val(""); });
+    $("#gc-clear").click(function(){ $("#gc").val(""); });
+    $("#results-clear").click(function(){ $("#results").val(""); });
+  });
+    
+
+  $(document).ready(function() {
+    //全てのinputにクリアボタンを
+    //$("input[type='text']").each(function(){
+    //    add_clear_button($(this));
+    //});
+
+    $("#keyword").focus();
+  });
+
+</script>
+</html>
