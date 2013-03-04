@@ -83,7 +83,7 @@
     <select id="distinct">
       <option>true</option>
       <option>false</option>
-    </select>  
+    </select>
     </div></div>
     
     <!-- detail -->
@@ -94,7 +94,7 @@
       <option>full</option>
       <option>standard</option>
       <option>simple</option>
-    </select>  
+    </select>
     </div></div>
 
     <!-- sort -->
@@ -110,7 +110,7 @@
       <option>score</option>
       <option>dist</option>
       <option>geo</option>
-    </select>  
+    </select>
     </div></div>
   
     <!-- results -->
@@ -121,30 +121,140 @@
     <button type="button" class="btn btn-mini" id="results-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
     </div></div>
 
+    <!-- lat -->
+    <div class="control-group">
+    <label class="control-label" for="lat">lat</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="lat">
+    <button type="button" class="btn btn-mini" id="lat-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- lon -->
+    <div class="control-group">
+    <label class="control-label" for="lon">lon</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="lon">
+    <button type="button" class="btn btn-mini" id="lon-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
   </div>
   
   <div class="span6">
-    
+
+    <!-- dist -->
+    <div class="control-group">
+    <label class="control-label" for="dist">dist</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="dist">
+    <button type="button" class="btn btn-mini" id="dist-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- bbox -->
+    <div class="control-group">
+    <label class="control-label" for="bbox">bbox</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="bbox">
+    <button type="button" class="btn btn-mini" id="bbox-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
     <!-- coupon -->
     <div class="control-group">
     <label class="control-label" for="coupon">coupon</label>
     <div class="controls">
     <select id="coupon">
-      <option>true</option>
       <option>false</option>
-    </select>  
+      <option>true</option>
+    </select>
     </div></div>
     
-    <!-- coupon -->
+    <!-- parking -->
     <div class="control-group">
-    <label class="control-label" for="coupon">coupon</label>
+    <label class="control-label" for="parking">parking</label>
     <div class="controls">
-    <select id="coupon">
-      <option>true</option>
+    <select id="parking">
       <option>false</option>
-    </select>  
+      <option>true</option>
+    </select>
+    </div></div>
+
+    <!-- creditcard -->
+    <div class="control-group">
+    <label class="control-label" for="creditcard">creditcard</label>
+    <div class="controls">
+    <select id="creditcard">
+      <option>false</option>
+      <option>true</option>
+    </select>
+    </div></div>
+
+    <!-- smoking -->
+    <div class="control-group">
+    <label class="control-label" for="smoking">smoking</label>
+    <div class="controls">
+    <select multiple="multiple" id="smoking">
+      <option value=1>禁煙</option>
+      <option value=2>分煙</option>
+      <option value=3>喫煙可</option>
+    </select>
+    </div></div>
+
+    <!-- reservation -->
+    <div class="control-group">
+    <label class="control-label" for="reservation">reservation</label>
+    <div class="controls">
+    <select id="reservation">
+      <option>0</option>
+      <option>1</option>
+    </select>
+    </div></div>
+
+    <!-- image -->
+    <div class="control-group">
+    <label class="control-label" for="image">image</label>
+    <div class="controls">
+    <select id="image">
+      <option>false</option>
+      <option>true</option>
+    </select>
     </div></div>
  
+    <!-- open -->
+    <div class="control-group">
+    <label class="control-label" for="open">open</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="open">
+    <button type="button" class="btn btn-mini" id="open-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    date,hour(ex. 5,19) or week,hour(ex. Mon,12) or now
+    </div></div>
+
+    <!-- loco_mode -->
+    <div class="control-group">
+    <label class="control-label" for="loco_mode">loco_mode</label>
+    <div class="controls">
+    <select id="loco_mode">
+      <option>true</option>
+      <option>false</option>
+    </select>
+    </div></div>
+
+    <!-- maxprice -->
+    <div class="control-group">
+    <label class="control-label" for="maxprice">maxprice</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="maxprice">
+    <button type="button" class="btn btn-mini" id="maxprice-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+    <!-- minprice -->
+    <div class="control-group">
+    <label class="control-label" for="minprice">minprice</label>
+    <div class="controls">
+    <input type="text" class="search-query" value="" id="minprice">
+    <button type="button" class="btn btn-mini" id="minprice-clear"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>
+    </div></div>
+
+
+
   </div>
   
   <div class="span12">
@@ -196,21 +306,40 @@
     url += "&";
     url += "results=" + $("#results").val();
     url += "&";
+    url += "lat=" + $("#lat").val();
+    url += "&";
+    url += "lon=" + $("#lon").val();
+    url += "&";
+    url += "dist=" + $("#dist").val();
+    url += "&";
+    url += "bbox=" + $("#bbox").val();
+    url += "&";
+    url += "coupon=" + $("#coupon").val();
+    url += "&";
+    url += "parking=" + $("#parking").val();
+    url += "&";
+    url += "creditcard=" + $("#creditcard").val();
+    url += "&";
+    url += "smoking=" + $("#smoking").val();
+    url += "&";
+    url += "reservation=" + $("#reservation").val();
+    url += "&";
+    url += "image=" + $("#image").val();
+    url += "&";
+    url += "open=" + $("#open").val();
+    url += "&";
+    url += "loco_mode=" + $("#loco_mode").val();
+    url += "&";
+    url += "maxprice=" + $("#maxprice").val();
+    url += "&";
+    url += "minprice=" + $("#minprice").val();
+    url += "&";
     url += "group=gid";
     url += "&";
     url += "output=xml";
     url += "&";
-    url += "appid="";
-     window.open(url);
-  }
-
-  function add_clear_button(button){
-    $(button).wrap('<span></span>');
-    $(button).after('<button type="button" class="btn btn-mini"><i class="icon-remove-sign" style="margin-top: 1px;"></i>clear</button>');
-    $(button).next().bind("click",function(){
-        var s = $(this).parent();
-        s.html(s.html());
-    });
+    url += "appid=";
+    window.open(url);
   }
 
   $(function(){
@@ -222,15 +351,16 @@
     $("#ac-clear").click(function(){ $("#ac").val(""); });
     $("#gc-clear").click(function(){ $("#gc").val(""); });
     $("#results-clear").click(function(){ $("#results").val(""); });
+    $("#lat-clear").click(function(){ $("#lat").val(""); });
+    $("#lon-clear").click(function(){ $("#lon").val(""); });
+    $("#dist-clear").click(function(){ $("#dist").val(""); });
+    $("#bbox-clear").click(function(){ $("#bbox").val(""); });
+    $("#open-clear").click(function(){ $("#open").val(""); });
+    $("#maxprice-clear").click(function(){ $("#maxprice").val(""); });
+    $("#minprice-clear").click(function(){ $("#minprice").val(""); });
   });
     
-
   $(document).ready(function() {
-    //全てのinputにクリアボタンを
-    //$("input[type='text']").each(function(){
-    //    add_clear_button($(this));
-    //});
-
     $("#keyword").focus();
   });
 
